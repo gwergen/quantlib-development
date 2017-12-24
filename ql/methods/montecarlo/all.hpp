@@ -17,4 +17,5 @@
 #include <ql/methods/montecarlo/pathgenerator.hpp>
 #include <ql/methods/montecarlo/pathpricer.hpp>
 #include <ql/methods/montecarlo/sample.hpp>
+#include <ql/methods/montecarlo/fractalpathgenerator.hpp>
 

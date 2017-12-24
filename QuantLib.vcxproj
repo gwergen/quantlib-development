@@ -136,6 +136,18 @@
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">QuantLib-$(qlCompilerTag)-mt</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">QuantLib-$(qlCompilerTag)-x64-mt</TargetName>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Boost\boost_1_59_0</IncludePath>
+    <LibraryPath>C:\Boost\boost_1_59_0\stage\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Boost\boost_1_59_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Boost\boost_1_59_0\stage\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\Boost\boost_1_59_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Boost\boost_1_59_0\stage\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
@@ -483,6 +495,7 @@
   <ItemGroup>
     <ClInclude Include="ql\experimental\finitedifferences\gbsmrndcalculator.hpp" />
     <ClInclude Include="ql\experimental\math\fireflyalgorithm.hpp" />
+    <ClInclude Include="ql\experimental\math\fractionalBrownianMotion.hpp" />
     <ClInclude Include="ql\experimental\math\gaussiannoncentralchisquaredpolynomial.hpp" />
     <ClInclude Include="ql\experimental\math\hybridsimulatedannealing.hpp" />
     <ClInclude Include="ql\experimental\math\hybridsimulatedannealingfunctors.hpp" />
@@ -510,6 +523,7 @@
     <ClInclude Include="ql\math\polynomialmathfunction.hpp" />
     <ClInclude Include="ql\math\pascaltriangle.hpp" />
     <ClInclude Include="ql\methods\finitedifferences\operators\fdmornsteinuhlenbeckop.hpp" />
+    <ClInclude Include="ql\methods\montecarlo\fractalpathgenerator.hpp" />
     <ClInclude Include="ql\rebatedexercise.hpp" />
     <ClInclude Include="ql\experimental\finitedifferences\dynprogvppintrinsicvalueengine.hpp" />
     <ClInclude Include="ql\experimental\finitedifferences\fdextoujumpvanillaengine.hpp" />
@@ -1792,6 +1806,7 @@
   <ItemGroup>
     <ClCompile Include="ql\experimental\finitedifferences\gbsmrndcalculator.cpp" />
     <ClCompile Include="ql\experimental\math\fireflyalgorithm.cpp" />
+    <ClCompile Include="ql\experimental\math\fractionalBrownianMotion.cpp" />
     <ClCompile Include="ql\experimental\math\gaussiannoncentralchisquaredpolynomial.cpp" />
     <ClCompile Include="ql\experimental\math\particleswarmoptimization.cpp" />
     <ClCompile Include="ql\experimental\finitedifferences\bsmrndcalculator.cpp" />
